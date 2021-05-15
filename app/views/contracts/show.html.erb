@@ -1,0 +1,16 @@
+<h1>Contract</h1>
+
+<li>
+    <%= @contract.job_number %>
+    <%= @contract.job_name %>
+    <%= @contract.job_amount %>
+</li>
+
+<ul>
+    <li><%= link_to "Edit", edit_contract_path(@contract) %></li>
+     <li><%= link_to "Destroy", contract_path(@contract),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+
+

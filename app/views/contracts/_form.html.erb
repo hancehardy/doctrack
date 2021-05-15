@@ -1,0 +1,29 @@
+<%= form_with model: contract do |form| %>
+  <div>
+    <%= form.label :job_number %><br>
+    <%= form.text_field :job_number %>
+     <% contract.errors.full_messages_for(:job_number).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :job_name %><br>
+    <%= form.text_area :job_name %>
+     <% contract.errors.full_messages_for(:job_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :job_amount %><br>
+    <%= form.text_area :job_amount %>
+     <% contract.errors.full_messages_for(:job_amount).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
