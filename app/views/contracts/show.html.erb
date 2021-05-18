@@ -8,9 +8,10 @@
 
 <ul>
     <li><%= link_to "Edit", edit_contract_path(@contract) %></li>
-     <li><%= link_to "Destroy", contract_path(@contract),
+    <li><%= link_to "Destroy", contract_path(@contract),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
+    <li><%= link_to "All Contracts", root_path %></li>
 </ul>
 
 
