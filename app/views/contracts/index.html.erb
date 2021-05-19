@@ -1,15 +1,28 @@
 <h1>Contracts</h1>
 
-<ul>
+<div class="row">
+  <div class="col-9">  
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Job Number</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Contract Date</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
     <% @contracts.each do |contract| %>
-        <li>
-            <%= link_to contract.job_number,contract %>
-            <%= contract.job_name %>
-            <%= contract.job_amount %>
-            <%= contract.milestone_1_date %>
-        </li>
+        <tr>
+            <td><%= link_to contract.job_number,contract %></td>
+            <td><%= contract.job_name %></td>
+            <td><%= contract.job_amount %></td>
+            <td><%= contract.milestone_1_date %></td>
+        </tr>
     <% end %>
-</ul>
+
 
 <%= link_to "New Contract", new_contract_path %>
 
