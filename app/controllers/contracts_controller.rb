@@ -46,6 +46,6 @@ class ContractsController < ApplicationController
 
   private
     def contract_params
-        params.require(:contract).permit(:job_number, :job_name, :job_amount)
+        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date)
     end
 end
