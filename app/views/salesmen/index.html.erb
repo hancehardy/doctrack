@@ -1,0 +1,24 @@
+<h1>Salesmen</h1>
+
+<div class="row">
+  <div class="col-9">  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Commission</th>
+
+        </tr>
+      </thead>
+        <tbody>
+
+            <% @salesmen.each do |salesman| %>
+                <tr>
+                    <td><%= link_to salesman.first_name,salesman %></td>
+                    <td><%= salesman.sales_commission %></td>
+                </tr>
+            <% end %>
+            </tbody>
+    </table>
+    </div>
+</div>

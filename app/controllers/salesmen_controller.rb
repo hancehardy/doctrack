@@ -4,11 +4,42 @@ class SalesmenController < ApplicationController
     end
 
     def show
-        @salesmen = Salesman.find(params[:id])
+        @salesman = Salesman.find(params[:id])
       end
     
       def new
-        @salesmen = Salesman.new
+        @salesman = Salesman.new
+      end
+
+      def edit
+        @salesman = Salesman.find(params[:id])
+      end
+
+      def create
+        @salesman = Salesman.new(salesman_params)
+    
+        if @salesman.save
+          redirect_to @salesman
+        else
+          render :new
+        end
+      end
+
+      def update
+        @salesman = Salesman.find(params[:id])
+    
+        if @salesman.update(salesman_params)
+          redirect_to @salesman
+        else
+          render :edit
+        end
+      end
+
+      def destroy
+        @salesman = Salesman.find(params[:id])
+        @salesman.destroy
+    
+        redirect_to salesmen_path
       end
 
       private
