@@ -38,7 +38,7 @@ class SalesmenController < ApplicationController
       def destroy
         @salesman = Salesman.find(params[:id])
         @salesman.destroy
-    
+        flash[:danger] = "Salesman has been deleted"
         redirect_to salesmen_path
       end
 
