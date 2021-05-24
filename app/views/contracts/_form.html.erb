@@ -5,28 +5,40 @@
   <% end %>
 
 <%= form_with model: contract do |form| %>
-    <div class="row g-3">
-      <div class="col-2">
-        <%= form.text_field :job_number ,class: "form-control", placeholder: "Job Number"%>
-      </div>
-       <div class="col-6">
-        <%= form.text_field :job_name ,class: "form-control", placeholder: "Job Name"%>
-      </div>
-       <div class="col-2">
-        <%= form.text_field :job_amount ,class: "form-control", placeholder: "Contract Amount"%>
-      </div>
-      <div class="col-2">
-        <%= form.date_field :milestone_1_date ,class: "form-control", placeholder: "Contract Date"%>
-      </div>
-    </div>
+   
+      <div class="row g-3">
+        <div class="col-md-3">
+          <%= form.text_field :job_number ,class: "form-control", placeholder: "Job Number"%>
+        </div>
+        <div class="col-md-9">
+          <%= form.text_field :job_name ,class: "form-control", placeholder: "Job Name"%>
+        </div>
+        <div class="col-3">
+          <%= form.text_field :job_amount ,class: "form-control", placeholder: "Contract Amount"%>
+        </div>
+        <div class="col-3">
+          <%= form.date_field :milestone_1_date ,class: "form-control", placeholder: "Contract Date"%>
+        </div>
+        <div class="col-3">
+          <%= form.text_field :referral_name ,class: "form-control", placeholder: "Referral Name"%>
+        </div>
+        <div class="col-3">
+          <%= form.text_field :referral_amount ,class: "form-control", placeholder: "Referral Percentage"%>
+        </div>
+      
+        <div class="col-3">
+          <%= form.collection_select :salesman_id , Salesman.all, :id, :full_name, {prompt:"Salesman"}, class: "form-control"%>
+        </div>
 
-  
+      <div class="col-12">
+        <%= form.submit class: "btn btn-primary btn-sm" %>
+      </div>
+
+    </div>
+   
  
-  <div class="col-auto">
-    <%= form.submit class: "btn btn-primary" %>
+     
+        
     
-  </div> 
-  <div class="col-auto"> 
-    <%= link_to "All Contracts", root_path, :class => "btn btn-primary" %>
-  </div>
-<% end %>
+   
+ <% end %>

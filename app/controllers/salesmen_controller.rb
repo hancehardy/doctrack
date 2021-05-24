@@ -44,6 +44,6 @@ class SalesmenController < ApplicationController
 
       private
       def salesman_params
-          params.require(:salesman).permit(:first_name, :last_name, :sales_commission)
+          params.require(:salesman).permit(:full_name, :sales_commission)
       end
 end

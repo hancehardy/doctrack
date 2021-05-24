@@ -15,7 +15,7 @@ class ContractsController < ApplicationController
     @contract = Contract.new(contract_params)
 
     if @contract.save
-      redirect_to @contract
+      redirect_to root_path
     else
       render :new
     end

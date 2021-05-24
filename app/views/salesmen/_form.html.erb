@@ -1,3 +1,4 @@
+<div class="container">
 <% if salesman.errors.any? %>
     <% salesman.errors.full_messages.each do |message| %>
       <div><%= message %></div>
@@ -7,11 +8,9 @@
 <%= form_with model: salesman do |form| %>
     <div class="row g-3">
       <div class="col-2">
-        <%= form.text_field :first_name ,class: "form-control", placeholder: "First Name"%>
+        <%= form.text_field :full_name ,class: "form-control", placeholder: "Salesman Name"%>
       </div>
-       <div class="col-6">
-        <%= form.text_field :last_name ,class: "form-control", placeholder: "Last Name"%>
-      </div>
+
        <div class="col-2">
         <%= form.text_field :sales_commission ,class: "form-control", placeholder: "Commission Percentage"%>
       </div>
@@ -20,8 +19,10 @@
   
  
   <div class="col-auto">
-    <%= form.submit class: "btn btn-primary" %>
+    <%= form.submit class: "btn btn-primary btn-sm" %>
   </div> 
   
-   <li><%= link_to "All Salesmen", salesmen_path %></li>
+
 <% end %>
+
+</div>
