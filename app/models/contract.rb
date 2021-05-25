@@ -1,6 +1,6 @@
 class Contract < ApplicationRecord
-   #belongs_to :salesmen
-   #belongs_to :referrals
+   belongs_to :salesman
+ 
 
     validates :job_number, presence: true
     validates :job_name, presence: true
