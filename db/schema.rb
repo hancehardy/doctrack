@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_055454) do
+ActiveRecord::Schema.define(version: 2021_05_27_044843) do
 
   create_table "contracts", force: :cascade do |t|
     t.integer "job_number"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_05_25_055454) do
     t.float "referral_amount"
     t.float "referral_due"
     t.string "referral_name"
+    t.boolean "job_status"
   end
 
   create_table "referrals", force: :cascade do |t|
