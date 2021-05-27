@@ -8,6 +8,8 @@ class Contract < ApplicationRecord
     validates :job_name, presence: true
     validates :job_amount, presence: true
     validates :milestone_1_date, presence: true
-
+        
+    
+    
    
 end
