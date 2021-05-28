@@ -15,7 +15,7 @@
 
               <tr>
                   <td><%= @salesman.full_name %></td>
-                  <td><%= @salesman.sales_commission %></td>
+                  <td><%= number_to_percentage(@salesman.sales_commission, precision: 0) %></td>
                   <td><%= link_to "Edit", edit_salesman_path(@salesman), :class=>"btn btn-primary btn-sm" %></td>
                           <td><%= link_to "Delete", salesman_path(@salesman), :class=> "btn btn-primary btn-sm",
                       method: :delete,

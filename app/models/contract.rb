@@ -11,11 +11,11 @@ class Contract < ApplicationRecord
 
 
     def salesman_commission
-        return self.job_amount * self.salesman.sales_commission        
+        return self.job_amount / self.salesman.sales_commission        
     end
         
     def salesman_commission_formatted
-        return ActionController::Base.helpers.number_to_currency(self.job_amount * self.salesman.sales_commission)
+        return ActionController::Base.helpers.number_to_currency(self.job_amount / self.salesman.sales_commission)
     end
     
     
