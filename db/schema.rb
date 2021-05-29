@@ -12,10 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_05_27_044843) do
 
-  create_table "contracts", force: :cascade do |t|
+  create_table "contracts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "job_number"
     t.string "job_name"
-    t.decimal "job_amount"
+    t.decimal "job_amount", precision: 10
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "contract_status", default: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_044843) do
     t.boolean "job_status"
   end
 
-  create_table "referrals", force: :cascade do |t|
+  create_table "referrals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.float "referral_commission"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_044843) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "salesmen", force: :cascade do |t|
+  create_table "salesmen", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "full_name"
     t.float "sales_commission"
     t.datetime "created_at", precision: 6, null: false

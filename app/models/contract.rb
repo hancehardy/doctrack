@@ -9,6 +9,8 @@ class Contract < ApplicationRecord
     validates :job_amount, presence: true
     validates :milestone_1_date, presence: true
 
+    before_save :ensure_m1_date
+    before_save :stamp_date_for_milestones
 
     def salesman_commission
         return self.job_amount / self.salesman.sales_commission        
@@ -18,6 +20,30 @@ class Contract < ApplicationRecord
         return ActionController::Base.helpers.number_to_currency(self.job_amount / self.salesman.sales_commission)
     end
     
+   
+
+
+    def ensure_m1_date
+        if !self.milestone_1_date.present?
+            self.milestone_1_date = DateTime.now
+            self.milestone_1_complete = true
+        end            
+    end
+
+    def stamp_date_for_milestones
+        if self.milestone_1_complete && !self.milestone_1_date.present?
+            self.milestone_1_date = DateTime.now
+        end
+        if self.milestone_2_complete && !self.milestone_2_date.present?
+            self.milestone_2_date = DateTime.now
+        end
+        if self.milestone_3_complete && !self.milestone_3_date.present?
+            self.milestone_3_date = DateTime.now
+        end
+        if self.milestone_4_complete && !self.milestone_4_date.present?
+            self.milestone_4_date = DateTime.now
+        end
+    end
     
    
 end

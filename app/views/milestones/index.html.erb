@@ -1,0 +1,43 @@
+<div class="container">
+<h1>Milestones</h1>
+  <div class="row">
+    <div class="col-9">  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Job Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contract Date</th>
+            <th scope="col">Contract Complete</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Order Complete</th>
+            <th scope="col">Install Date</th>
+            <th scope="col">Install Complete</th>
+            <th scope="col">Final Date</th>
+            <th scope="col">Final Complete</th>
+
+          </tr>
+        </thead>
+          <tbody>
+
+              <% @contracts.each do |contract| %>
+                  <tr>
+                      <td><%= link_to contract.job_number,contract %></td>
+                      <td><%= contract.job_name %></td>
+                      <td><%= contract.milestone_1_date %></td>
+                      <td><%= contract.milestone_1_complete %></td>
+                      <td><%= contract.milestone_2_date %></td>
+                      <td><%= contract.milestone_2_complete %></td>
+                      <td><%= contract.milestone_3_date %></td>
+                      <td><%= contract.milestone_3_complete %></td>
+                      <td><%= contract.milestone_4_date %></td>
+                      <td><%= contract.milestone_4_complete %></td>
+                     
+                  </tr>
+              <% end %>
+            </tbody>
+      </table>
+      </div>
+  </div>
+  <%= link_to "New Contract", new_contract_path(@contract), :class=>"btn btn-primary btn-sm" %>
+</div>
