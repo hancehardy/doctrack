@@ -1,7 +1,12 @@
 class ContractsController < ApplicationController
   def index
     @contracts = Contract.all
-   
+    
+  end
+
+  def milestones
+    @contracts = Contract.all
+    
   end
 
   def show
@@ -27,11 +32,15 @@ class ContractsController < ApplicationController
     @contract = Contract.find(params[:id])
   end
 
+  def edit_milestone
+    @contract = Contract.find(params[:id])
+  end
+
   def update
     @contract = Contract.find(params[:id])
 
     if @contract.update(contract_params)
-      redirect_to @contract
+      redirect_to milestones_path
     else
       render :edit
     end
@@ -48,7 +57,7 @@ class ContractsController < ApplicationController
 
   private
     def contract_params
-        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date, :referral_name, :referral_amount, :salesman_id)
+        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date, :referral_name, :referral_amount, :salesman_id, :milestone_2_complete, :milestone_3_complete, :milestone_4_complete)
     end
     
 

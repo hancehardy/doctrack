@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :contracts
   resources :referrals
   resources :salesmen
-  resources :milestones
+  get '/milestones', to: 'contracts#milestones'
+  get '/milestone/:id', to: 'contracts#edit_milestone', as: "edit_milestone"
+  patch "/contracts/:id", to: 'contracts#update', as: "modify_contract"
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

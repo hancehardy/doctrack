@@ -21,7 +21,7 @@
 
               <% @contracts.each do |contract| %>
                   <tr>
-                      <td><%= link_to contract.job_number,edit_milestone_path(contract) %></td>
+                      <td><%= link_to contract.job_number,edit_contract_path(contract) %></td>
                       <td><%= contract.job_name %></td>
                       <td><%= contract.milestone_1_date.strftime("%-m/%-d/%Y") %></td>
                       <td><%= contract.milestone_2_date %></td>
@@ -37,5 +37,8 @@
       </table>
       </div>
   </div>
-  <%= link_to "New Contract", new_contract_path(@contract), :class=>"btn btn-primary btn-sm" %>
+ 
 </div>
+
+
+

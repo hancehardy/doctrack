@@ -1,0 +1,33 @@
+<div class="container">
+<h1>Milestones</h1>
+  <div class="row">
+    <div class="col-9">  
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Job Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contract Date</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Order Complete</th>
+            <th scope="col">Install Date</th>
+            <th scope="col">Install Complete</th>
+            <th scope="col">Final Date</th>
+            <th scope="col">Final Complete</th>
+
+          </tr>
+        </thead>
+          <tbody>
+
+              <% @contracts.each do |contract| %>
+                  <%= render "milestone_form", contract: contract %>
+              <% end %>
+            </tbody>
+      </table>
+      </div>
+  </div>
+ 
+</div>
+
+
+
