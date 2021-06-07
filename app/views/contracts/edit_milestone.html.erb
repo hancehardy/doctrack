@@ -7,17 +7,50 @@
     <h1>Milestones</h1>
     </div>
 <%= form_with model: @contract do |form| %>
+   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    <div class="container">
-      <div class="row g-3">
-        <div class="col-md-3">
+   
+ 
+      <div class="row">
+      
+         <thead>
+          <tr>
+            <th scope="col-md-1">Job Number</th>
+            <th scope="col-md-2">Name</th>
+            <th scope="col-md-1">Order</th>
+            <th scope="col-md-1">Install</th>
+            <th scope="col=md-1">Final</th>
+          </tr>
+        </thead>
+        
+        <div class="col-md-1">
+          <%= @contract.job_number %>
+        </div>
+        <div class="col-md-2">
+          <%= @contract.job_name %>
+          </div>
+        <div class="col-md-1">
           <%= form.label "Order" %>
           <%= form.check_box :milestone_2_complete, class: "form-check form-check-inline" %>
         </div>
-       <div class="col-md-3">
+       <div class="col-md-1">
           <%= form.label "Install" %>
           <%= form.check_box :milestone_3_complete, class: "form-check form-check-inline" %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-1">
           <%= form.label "Final" %>
           <%= form.check_box :milestone_4_complete, class: "form-check form-check-inline" %>
         </div>
