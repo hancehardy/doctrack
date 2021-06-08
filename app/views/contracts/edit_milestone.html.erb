@@ -9,65 +9,37 @@
 <%= form_with model: @contract do |form| %>
    
    
- 
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    <div class="container">
    
  
-      <div class="row">
-      
-         <thead>
-          <tr>
-            <th scope="col-md-1">Job Number</th>
-            <th scope="col-md-2">Name</th>
-            <th scope="col-md-1">Order</th>
-            <th scope="col-md-1">Install</th>
-            <th scope="col=md-1">Final</th>
-          </tr>
-        </thead>
-        
-        <div class="col-md-1">
+    <div class="row">     
+      <div class="col-2">Job Number</div>
+      <div class="col-3">Name</div>
+      <div class="col-1">Order</div>
+      <div class="col-1">Install</div>
+      <div class="col-1">Final</div>  
+    </div>
+    <div class="row">
+        <div class="col-2">
           <%= @contract.job_number %>
         </div>
-        <div class="col-md-2">
+        <div class="col-3">
           <%= @contract.job_name %>
-          </div>
-        <div class="col-md-1">
-          <%= form.label "Order" %>
-          <%= form.check_box :milestone_2_complete, class: "form-check form-check-inline" %>
         </div>
-       <div class="col-md-1">
-          <%= form.label "Install" %>
-          <%= form.check_box :milestone_3_complete, class: "form-check form-check-inline" %>
+        <div class="col-1">
+          <%= form.check_box :milestone_2_complete, class: "form-check" %>
         </div>
-        <div class="col-md-1">
-          <%= form.label "Final" %>
-          <%= form.check_box :milestone_4_complete, class: "form-check form-check-inline" %>
+       <div class="col-1">
+          <%= form.check_box :milestone_3_complete, class: "form-check" %>
         </div>
-
-         
-      
-
-      <div class="col-12">
+        <div class="col-1">
+          <%= form.check_box :milestone_4_complete, class: "form-check" %>
+        </div>
+    </div>
+      <div class="d-grid gap-2 d-md-block">
         <%= form.submit class: "btn btn-primary btn-sm" %>
+        <%= link_to "Back", milestones_path, class: "btn btn-primary btn-sm" %>
       </div>
-
-    </div>
-    </div>
-   
- 
-     
-        
-    
+  </div>
    
  <% end %>

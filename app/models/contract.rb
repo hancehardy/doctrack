@@ -9,7 +9,9 @@ class Contract < ApplicationRecord
     validates :job_amount, presence: true
     validates :milestone_1_date, presence: true
 
+    before_save :undo_stamp_date_for_milestones
     before_save :stamp_date_for_milestones
+    
 
     def salesman_commission
         return self.job_amount / self.salesman.sales_commission        
@@ -19,7 +21,17 @@ class Contract < ApplicationRecord
         return ActionController::Base.helpers.number_to_currency(self.job_amount / self.salesman.sales_commission)
     end
 
-
+    def undo_stamp_date_for_milestones
+        if self.milestone_2_complete == false
+            self.milestone_2_date = nil
+        end
+        if self.milestone_3_complete == false
+            self.milestone_3_date = nil
+        end
+        if self.milestone_4_complete == false
+            self.milestone_4_date = nil
+        end
+    end
 
 
    
