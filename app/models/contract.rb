@@ -47,7 +47,21 @@ class Contract < ApplicationRecord
         if self.milestone_4_complete && !self.milestone_4_date.present?
             self.milestone_4_date = DateTime.now
     end
+    end
+
+    def milestone_1_amount
+        return self.job_amount * 0.15
+    end
+    def milestone_2_amount
+        return self.job_amount * 0.35
+    end
+    def milestone_3_amount
+        return self.job_amount * 0.40
+    end
+    def milestone_4_amount
+        return self.job_amount * 0.10
+    end
+
 end
-    
-   
-end
+
+
