@@ -19,6 +19,9 @@
           <li class="nav-item">
             <%= link_to "Milestones", milestones_path, class: "nav-link"%>
           </li>
+          <li class="nav-item">
+            <%= link_to "DOC", docs_path, class: "nav-link"%>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Contracts
@@ -26,6 +29,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li> <%= link_to "Contracts", contracts_path, class: "dropdown-item" %></li>
               <li> <%= link_to "Milestones", milestones_path, class: "dropdown-item" %></li>
+              <li> <%= link_to "DOC", docs_path, class: "dropdown-item" %></li>
               <%# <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li> %>
@@ -35,10 +39,7 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+       
       </div>
     </div>
   </nav>

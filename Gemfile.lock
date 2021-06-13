@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/radar/by_star
+  revision: f3412a7ffb015df7ced6aa662a53a53e081611a0
+  specs:
+    by_star (4.0.0)
+      activesupport (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -201,6 +208,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
+  by_star!
   byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)
