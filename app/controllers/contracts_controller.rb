@@ -10,7 +10,7 @@ class ContractsController < ApplicationController
   end
 
   def docs
-    @contracts = Contract.all 
+    @contracts = Contract.by_month(6, field: :milestone_2_date)
   end
 
   def show
@@ -61,7 +61,7 @@ class ContractsController < ApplicationController
 
   private
     def contract_params
-        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date, :referral_name, :referral_amount, :salesman_id, :milestone_2_complete, :milestone_3_complete, :milestone_4_complete)
+        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date, :milestone_2_date, :referral_name, :referral_amount, :salesman_id, :milestone_2_complete, :milestone_3_complete, :milestone_4_complete)
     end
     
 
