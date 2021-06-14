@@ -9,7 +9,7 @@
           <th scope="col">Name</th>
           <th scope="col">Commission</th>
         
-          <th scope="col">Contract Names</th>
+ 
 
         </tr>
       </thead>
@@ -19,9 +19,7 @@
                 <tr>
                     <td><%= link_to salesman.full_name,salesman %></td>
                     <td><%= number_to_percentage(salesman.sales_commission, precision: 0) %></td>
-                     <% salesman.contracts.each do |contract| %>
-                     <td>Salesman: <%= salesman.full_name %> - <%=contract.job_name %></td>
-                    <% end %>
+                     
                 </tr>
             <% end %>
             </tbody>

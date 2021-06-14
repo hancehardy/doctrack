@@ -29,7 +29,7 @@
                       <td><%= contract.milestone_2_date.try(:strftime, "%-m/%-d/%y") %></td>
                       <td><%= check_box_tag "milestone_2_complete", contract.milestone_2_complete, contract.milestone_2_complete, disabled: true %></td>
                       <td><%= contract.milestone_3_date.try(:strftime, "%-m/%-d/%y") %></td>
-                      <td><%= check_box_tag "milestone_3_complete", contract.milestone_3_complete, contract.milestone_3_complete, disabled: true, class: "checkbox" %></td>
+                      <td><%= check_box_tag "milestone_3_complete", contract.milestone_3_complete, contract.milestone_3_complete, disabled: true %></td>
                       <td><%= contract.milestone_4_date.try(:strftime, "%-m/%-d/%y") %></td>
                       <td><%= contract.milestone_4_complete %></td>
                      
