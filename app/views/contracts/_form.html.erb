@@ -5,23 +5,8 @@
   <% end %>
 
 <%= form_with model: contract do |form| %>
-   <div class="container">
-   <div class="row g-3" style="margin-bottom: 30px">
-    <div class="col-md-3">
-      <%= form.label "Order" %>
-      <%= form.check_box :milestone_2_complete, class: "form-check form-check-inline" %>
-    </div>
-      <div class="col-md-3">
-      <%= form.label "Install" %>
-      <%= form.check_box :milestone_3_complete, class: "form-check form-check-inline" %>
-    </div>
-      <div class="col-md-3">
-      <%= form.label "Final" %>
-      <%= form.check_box :milestone_4_complete, class: "form-check form-check-inline" %>
-    </div>
-   </div>
-   <hr />
-   <br />
+ 
+  
       <div class="row g-3">
         <div class="col-md-3">
           <%= form.text_field :job_number ,class: "form-control", placeholder: "Job Number"%>

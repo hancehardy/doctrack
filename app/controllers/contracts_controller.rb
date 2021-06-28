@@ -36,6 +36,8 @@ class ContractsController < ApplicationController
     @contract = Contract.find(params[:id])
   end
 
+ 
+
   def edit_milestone
     @contract = Contract.find(params[:id])
   end
@@ -61,7 +63,7 @@ class ContractsController < ApplicationController
 
   private
     def contract_params
-        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date, :milestone_2_date, :referral_name, :referral_amount, :salesman_id, :milestone_2_complete, :milestone_3_complete, :milestone_4_complete)
+        params.require(:contract).permit(:job_number, :job_name, :job_amount, :milestone_1_date, :milestone_2_date, :milestone_3_date, :milestone_4_date, :referral_name, :referral_amount, :salesman_id, :milestone_2_complete, :milestone_3_complete, :milestone_4_complete)
     end
     
 

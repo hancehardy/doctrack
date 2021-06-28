@@ -1,5 +1,6 @@
 class Contract < ApplicationRecord
    belongs_to :salesman
+  
 
   
  
@@ -62,9 +63,9 @@ class Contract < ApplicationRecord
         return self.job_amount * 0.10
     end
 
-    def doc_date
-        return self.milestone_1_date 
-    end
+ 
+
+  
 end
 
 
