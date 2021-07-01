@@ -10,8 +10,12 @@ class ContractsController < ApplicationController
   end
 
   def docs
-    @contracts = Contract.by_month(6, field: :milestone_2_date)
+    @contracts = Contract.all
   end
+  
+  # def docs
+   # @contracts = Contract.by_month(6, year: 2021, field: :milestone_2_date)
+  #end
 
   def show
     @contract = Contract.find(params[:id])

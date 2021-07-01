@@ -63,8 +63,14 @@ class Contract < ApplicationRecord
         return self.job_amount * 0.10
     end
 
- 
 
+
+
+
+
+    #def doc_month(mo, yr)
+    #    self.contracts.by_month(mo, year: yr, field: milestone_1_complete)
+    #end
   
 end
 
