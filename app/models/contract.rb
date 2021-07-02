@@ -68,8 +68,8 @@ class Contract < ApplicationRecord
 
 
 
-    #def doc_month(mo, yr)
-    #    self.contracts.by_month(mo, year: yr, field: milestone_1_complete)
+    #def doc_month(mo, yr, milestone_complete)
+    #    self.contracts.by_month(mo, year: yr, field: milestone_complete)
     #end
   
 end
