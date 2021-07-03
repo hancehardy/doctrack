@@ -12,6 +12,8 @@ class Contract < ApplicationRecord
 
     before_save :undo_stamp_date_for_milestones
     before_save :stamp_date_for_milestones
+
+    scope :doc_jun, -> { by_month(6, year: 2021, field: :milestone_3_date)}
     
 
     def salesman_commission

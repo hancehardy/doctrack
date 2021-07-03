@@ -14,7 +14,7 @@ class ContractsController < ApplicationController
   #end
   
   def docs
-   @contracts = Contract.by_month(6, year: 2021, field: :milestone_3_date)
+   @contracts = Contract.doc_jun
   end
 
   def show
