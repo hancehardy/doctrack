@@ -1,5 +1,6 @@
 class Contract < ApplicationRecord
    belongs_to :salesman
+   #belongs_to :referral
   
 
   
@@ -13,7 +14,7 @@ class Contract < ApplicationRecord
     before_save :undo_stamp_date_for_milestones
     before_save :stamp_date_for_milestones
 
-    scope :doc_jun, -> { by_month(6, year: 2021, field: :milestone_3_date)}
+    scope :doc_by_month_year_and_field, -> (month_num, year_num, field_name) { by_month(month_num, year: year_num, field: field_name)}
     
 
     def salesman_commission
@@ -49,7 +50,7 @@ class Contract < ApplicationRecord
         end
         if self.milestone_4_complete && !self.milestone_4_date.present?
             self.milestone_4_date = DateTime.now
-    end
+        end
     end
 
     def milestone_1_amount
@@ -63,6 +64,22 @@ class Contract < ApplicationRecord
     end
     def milestone_4_amount
         return self.job_amount * 0.10
+    end
+    
+    def get_doc_sums(month, year)      
+        data = []          
+        # iterate through each milestone field
+        debugger
+        m1_amounts = self.doc_by_month_year_and_field(month, year, :milestone_1_date)
+        # if m1_dates > 0
+
+        #     data << m1_dates
+        # end
+        # m2_dates = self.doc_by_month_year_and_field(month, year, :milestone_2_date)
+        # m3_dates = self.doc_by_month_year_and_field(month, year, :milestone_3_date)
+        # m4_dates = self.doc_by_month_year_and_field(month, year, :milestone_4_date)
+            # does the milestone_date fall inside the month?
+        return data
     end
 
 

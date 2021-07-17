@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_044843) do
+ActiveRecord::Schema.define(version: 2021_07_17_220307) do
 
   create_table "contracts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "job_number"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2021_05_27_044843) do
     t.datetime "referral_commission_paid_date"
     t.float "referral_amount"
     t.float "referral_due"
-    t.string "referral_name"
     t.boolean "job_status"
+    t.string "referral_name"
   end
 
   create_table "referrals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

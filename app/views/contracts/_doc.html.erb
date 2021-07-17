@@ -11,13 +11,18 @@
           </tr>
         </thead>
           <tbody>
-              <% @contracts.each do |contract| %>
-                  <tr>
-                    <td><%= contract.job_number %></td>
-                      <td><%= contract.job_name %></td>
-                      <td><%= number_to_currency(contract.milestone_3_amount) %></td>
-                  </tr>
+              <% @data.each do |datum| %>
+                <tr>
+                      <td><%= datum[:job_number] %></td>
+                      <td><%= datum[:job_name] %></td>
+                      <td><%= number_to_currency(datum[:amount]) %></td>
+                    </tr>
               <% end %>
+              <tr>
+                <td></td>
+                <td><strong>TOTAL</strong></td>
+                <td><strong><%= number_to_currency(@sum) %></strong></td>
+              </tr>
             </tbody>
       </table>
     </div>

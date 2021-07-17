@@ -9,13 +9,53 @@ class ContractsController < ApplicationController
     
   end
 
-  #def docs
-   # @contracts = Contract.all
-  #end
-  
-  def docs
-   @contracts = Contract.doc_jun
+  def docs    
+    milestone1contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_1_date)
+    milestone2contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_2_date)
+    milestone3contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_3_date)
+    milestone4contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_4_date)
+    
+    @data = []
+    @sum = 0
+    milestone1contracts.each do |contract|      
+      match = {}
+      match[:job_number] = contract.job_number
+      match[:job_name] = contract.job_name
+      match[:amount] = contract.milestone_1_amount
+      
+      @sum += contract.milestone_1_amount
+
+      @data << match
+    end
+    milestone2contracts.each do |contract|      
+      match = {}
+      match[:job_number] = contract.job_number
+      match[:job_name] = contract.job_name
+      match[:amount] = contract.milestone_2_amount
+      @sum += contract.milestone_2_amount
+      @data << match
+    end
+    milestone3contracts.each do |contract|      
+      match = {}
+      match[:job_number] = contract.job_number
+      match[:job_name] = contract.job_name
+      match[:amount] = contract.milestone_3_amount
+      @sum += contract.milestone_3_amount
+      @data << match
+    end
+    milestone4contracts.each do |contract|            
+      match = {}
+      match[:job_number] = contract.job_number
+      match[:job_name] = contract.job_name
+      match[:amount] = contract.milestone_4_amount
+      @sum += contract.milestone_4_amount
+      @data << match
+    end    
   end
+  
+  # def docs
+  #  @contracts = Contract.doc_jun
+  # end
 
   def show
     @contract = Contract.find(params[:id])
