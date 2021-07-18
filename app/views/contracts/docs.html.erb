@@ -1,6 +1,22 @@
 <div class="container">
     <h1>DOC</h1>
-<div class="row">
+
+
+
+<%= form_with model: @contract do |form| %>
+
+  <div class="row g-3">
+          <div class="col-md-3">
+            <%= form.text_field :month_num ,class: "form-control", placeholder: "Month Number"%>
+          </div>
+          <div class="col-md-3">
+            <%= form.text_field :year_num ,class: "form-control", placeholder: "Year ####"%>
+          </div>
+  </div>
+
+
+ <%= form.submit 'Show' %>
+<% end %>
 
 
 

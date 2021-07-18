@@ -10,10 +10,10 @@ class ContractsController < ApplicationController
   end
 
   def docs    
-    milestone1contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_1_date)
-    milestone2contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_2_date)
-    milestone3contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_3_date)
-    milestone4contracts = Contract.doc_by_month_year_and_field(7, 2021, :milestone_4_date)
+    milestone1contracts = Contract.doc_by_month_year_and_field(params[:month_num], params[:year_num], :milestone_1_date)
+    milestone2contracts = Contract.doc_by_month_year_and_field(params[:month_num], params[:year_num], :milestone_2_date)
+    milestone3contracts = Contract.doc_by_month_year_and_field(params[:month_num], params[:year_num], :milestone_3_date)
+    milestone4contracts = Contract.doc_by_month_year_and_field(params[:month_num], params[:year_num], :milestone_4_date)
     
     @data = []
     @sum = 0
