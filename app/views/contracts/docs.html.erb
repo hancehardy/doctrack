@@ -7,15 +7,40 @@
 
   <div class="row g-3">
           <div class="col-md-3">
-            <%= form.text_field :month_num ,class: "form-control", placeholder: "Month Number"%>
+            <%= form.select :month_num, options_for_select([
+              ["Select Month", ""], 
+              "January", 
+              "February", 
+              "March", 
+              "April", 
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December"]), 
+              {}, { class: "form-select form-select-sm" } %>           
+          </div>
+
+
+
+          <div class="col-md-3">
+          <% current_year = Date.current.year %>
+            <%= form.select :year_num, options_for_select([ 
+              [(current_year)], 
+              (current_year-1), 
+              (current_year+1)]), 
+             {}, { class: "form-select form-select-sm" } %>   
           </div>
           <div class="col-md-3">
-            <%= form.text_field :year_num ,class: "form-control", placeholder: "Year ####"%>
+           <%= form.submit 'View', class: "btn btn-success btn-sm" %>
           </div>
   </div>
 
 
- <%= form.submit 'Show' %>
+
 <% end %>
 
 
